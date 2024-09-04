@@ -2,11 +2,17 @@
     <div class="quixnav-scroll">
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                        class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon icon-app-store"></i><span class="nav-text">Categories</span>
+                </a>
                 <ul aria-expanded="false">
-                    <li><a href="./index.html">Dashboard 1</a></li>
-                    <li><a href="./index2.html">Dashboard 2</a></li>
+                    <li><a href="{{ Route('category.index') }}">Category List</a></li>
                 </ul>
             </li>
             <li class="nav-label">Apps</li>

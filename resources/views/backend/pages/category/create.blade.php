@@ -1,0 +1,37 @@
+@extends('backend.layout.master')
+@section('admin_title','category create page')
+
+@section('admin_content')
+
+<div class="row">
+    <div class="col-md-2">
+        <a href="{{ route('category.index') }}" class="btn btn-primary" href="">back</a>
+    </div>
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="{{ route('category.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label>Category Name</label>
+                            <input type="text" name="category_name" class="form-control" placeholder="category name">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input name="is_active" type="checkbox"> Active
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        
+    </div>
+
+</div>
+    
+@endsection
