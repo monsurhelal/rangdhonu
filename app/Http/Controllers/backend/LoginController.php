@@ -28,4 +28,12 @@ class LoginController extends Controller
             return redirect()->route('admin.login');
         }
     }
+
+    public function logout(){
+        if(Auth::user()){
+            Auth::logout();
+            Session::flash('message','you are logout');
+            return redirect()->route('admin.showloginpage');
+        }
+    }
 }

@@ -3,7 +3,7 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
             <li>
-                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <a class="has-arrow" href="{{ route('admin.dashboard') }}" aria-expanded="false">
                     <i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span>
                 </a>
             </li>
@@ -13,6 +13,14 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ Route('category.index') }}">Category List</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon icon-app-store"></i><span class="nav-text">Sub Categories</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ Route('sub-category.index') }}">Sub Category List</a></li>
                 </ul>
             </li>
             <li class="nav-label">Apps</li>
