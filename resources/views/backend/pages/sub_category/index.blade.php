@@ -39,8 +39,8 @@
                                     </td>
                                     <td class="color-primary">
                                         <div class="d-flax ">
-                                             <a class="btn btn-secondary" href="">Edit</a>
-                                            <form class="d-inline" action="" method="POST">
+                                             <a class="btn btn-secondary" href="{{ route('sub-category.edit',$subCategory->id) }}">Edit</a>
+                                            <form class="d-inline" action="{{ route('sub-category.destroy',$subCategory->id) }}" method="POST">
                                                 @method("DELETE")
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger">Delete</button>

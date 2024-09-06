@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SubCategoryStoreRequest;
+use App\Http\Requests\SubCategoryUpdateRequest;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
@@ -59,15 +60,29 @@ class SubCategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //dd($id);
+
+        $subCategory = SubCategory::find($id);
+        $categories = Category::select('id','category_name')->get();
+
+        return view('backend.pages.sub_category.edit',compact(['subCategory','categories']));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(SubCategoryUpdateRequest $request, string $id)
     {
-        //
+        $subCategory = SubCategory::find($id);
+        $subCategory->update([
+            'category_id' => $request->category_id,
+            'sub_category_name' => $request->sub_category_name,
+            'sub_category_slug' => Str::slug($request->sub_category_name),
+            'is_active' => ($request->is_active == 'on') ? 1 : 0
+        ]);
+
+        Session::flush('message','sub category updated');
+        return redirect()->route('sub-category.index');
     }
 
     /**
@@ -75,6 +90,8 @@ class SubCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        SubCategory::find($id)->delete();
+        Session::flush('message','sub category deleted');
+        return redirect()->route('sub-category.index');
     }
 }
