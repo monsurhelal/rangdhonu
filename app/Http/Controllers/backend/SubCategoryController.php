@@ -7,8 +7,7 @@ use App\Http\Requests\SubCategoryStoreRequest;
 use App\Http\Requests\SubCategoryUpdateRequest;
 use App\Models\Category;
 use App\Models\SubCategory;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Str;
 
 class SubCategoryController extends Controller
@@ -42,8 +41,7 @@ class SubCategoryController extends Controller
         'sub_category_slug' => Str::slug($request->sub_category_name),
         'is_active' => ($request->is_active == 'on') ? 1 : 0
       ]);
-
-      Session::flush('message','sub category created');
+      Toastr::success('sub category created successfully');
       return redirect()->route('sub-category.index');
     }
 
@@ -80,8 +78,7 @@ class SubCategoryController extends Controller
             'sub_category_slug' => Str::slug($request->sub_category_name),
             'is_active' => ($request->is_active == 'on') ? 1 : 0
         ]);
-
-        Session::flush('message','sub category updated');
+        Toastr::success('sub category updated');
         return redirect()->route('sub-category.index');
     }
 
@@ -91,7 +88,7 @@ class SubCategoryController extends Controller
     public function destroy(string $id)
     {
         SubCategory::find($id)->delete();
-        Session::flush('message','sub category deleted');
+        Toastr::success('sub category deleted');
         return redirect()->route('sub-category.index');
     }
 }

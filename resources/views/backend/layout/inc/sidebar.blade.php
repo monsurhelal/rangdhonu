@@ -23,6 +23,14 @@
                     <li><a href="{{ Route('sub-category.index') }}">Sub Category List</a></li>
                 </ul>
             </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon icon-app-store"></i><span class="nav-text">Product</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ Route('product.create') }}">Product List</a></li>
+                </ul>
+            </li>
             <li class="nav-label">Apps</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>

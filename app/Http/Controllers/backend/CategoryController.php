@@ -38,7 +38,7 @@ class CategoryController extends Controller
             'is_active' => ($request->is_active == 'on') ? 1 : 0
         ]);
 
-        return redirect()->back();
+        return redirect()->route('category.index');
 
     }
 

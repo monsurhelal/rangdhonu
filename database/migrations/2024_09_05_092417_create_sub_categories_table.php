@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('casecade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('sub_category_name')->unique();
             $table->string('sub_category_slug');
             $table->string('is_active');

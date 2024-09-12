@@ -29,5 +29,14 @@
     <script src="{{ asset('assets/backend/') }}/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
     <script src="{{ asset('assets/backend/') }}/vendor/jquery.counterup/jquery.counterup.min.js"></script>
 
-
+{{-- jquery cdn --}}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="crossorigin="anonymous"></script>
     <script src="{{ asset('assets/backend/') }}/js/dashboard/dashboard-1.js"></script>
+
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset('assets/backend/') }}/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    @stack('admin_script')

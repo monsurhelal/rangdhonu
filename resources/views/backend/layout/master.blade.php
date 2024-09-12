@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title> @yield('admin_title') </title>
-
     @include('backend/layout/inc/style')
 </head>
 
@@ -62,6 +61,8 @@
     ***********************************-->
 
     @include('backend.layout.inc.script')
+
+    {!! Toastr::message() !!}
 </body>
 
 </html>
