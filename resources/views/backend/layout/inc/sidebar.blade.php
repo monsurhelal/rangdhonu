@@ -28,7 +28,7 @@
                     <i class="icon icon-app-store"></i><span class="nav-text">Product</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ Route('product.create') }}">Product List</a></li>
+                    <li><a href="{{ Route('product.index') }}">Product List</a></li>
                 </ul>
             </li>
             <li class="nav-label">Apps</li>

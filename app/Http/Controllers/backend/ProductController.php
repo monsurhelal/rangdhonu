@@ -18,7 +18,21 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::with(['getCategory','getSubCategory','getColour','getSize'])
+                                    ->select('id',
+                                        'product_title',
+                                        'product_description',
+                                        'product_image',
+                                        'product_price',
+                                        'product_compare_price',
+                                        'product_sku',
+                                        'product_barcode',
+                                        'product_status',
+                                        'category_id',
+                                        'sub_category_id',
+                                        'product_featured_status')
+                                    ->get();
+        return view('backend.pages.product.index',compact('products'));
     }
 
     /**
@@ -40,9 +54,6 @@ class ProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-
-       
-
         $file = $request->file('product_image'); 
         $location = '/backend/uploads/products/';
         $new_name = time().'.'.$file->getClientOriginalExtension();
