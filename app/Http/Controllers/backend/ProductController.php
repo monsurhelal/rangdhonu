@@ -10,6 +10,7 @@ use App\Models\ProductColour;
 use App\Models\ProductSize;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -60,6 +61,7 @@ class ProductController extends Controller
         $file->storeAs($location,$new_name,'public');
         $product = Product::create([
             "product_title" => $request->product_title,
+            "product_slug" => Str::slug($request->product_title),
             "product_description" => $request->product_description,
             "product_image" => $new_name,
             "product_price" => $request->product_price,
@@ -85,7 +87,7 @@ class ProductController extends Controller
             ]);
         }
 
-        return redirect()->back();
+        return redirect()->route('product.index');
         
     }
 

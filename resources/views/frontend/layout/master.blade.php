@@ -22,13 +22,7 @@
         @include('frontend.layout.inc.header')
 
         <main class="main">
-            @include('frontend.layout.inc.slider')
-
-            <div class="mb-4"></div><!-- End .mb-2 -->
-
-            @include('frontend.layout.inc.Category')
-            <div class="mb-3"></div><!-- End .mb-3 -->
-            @include('frontend.layout.inc.porduct')
+           @yield('main_content')
             <div class="mb-3"></div><!-- End .mb-3 -->
         </main><!-- End .main -->
 
