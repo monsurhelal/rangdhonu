@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+
 Route::get('/',[HomeController::class,'index']);
 Route::get('/product/{product_title}',[HomeController::class,'ShowProductPage'])->name('product.page');
+
 
 
 
